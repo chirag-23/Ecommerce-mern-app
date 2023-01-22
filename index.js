@@ -31,7 +31,7 @@ app.use("/api/cart", cartRoute);
 app.use("/api/order", orderRoute);
 app.use("/api/checkout", stripeRoute);
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, "./client/public")));
 app.use(express.static(path.join(__dirname, "./client/build")));
 app.get("*", function (_, res) {
   res.sendFile(
